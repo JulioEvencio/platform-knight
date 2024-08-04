@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn631mw1fti2p"]
+[gd_scene load_steps=15 format=3 uid="uid://cn631mw1fti2p"]
 
 [ext_resource type="PackedScene" uid="uid://gbgcisxoqs0s" path="res://scenes/player.tscn" id="1_m6fpn"]
 [ext_resource type="Script" path="res://scripts/Game.cs" id="1_s1isx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://p8j0e00iufx1" path="res://scenes/kill_zone.tscn" id="3_6d3ii"]
 [ext_resource type="PackedScene" uid="uid://4e7hdm4am7un" path="res://scenes/platform.tscn" id="3_ovfdq"]
 [ext_resource type="PackedScene" uid="uid://b4vm1diln4k33" path="res://scenes/coin.tscn" id="4_vluui"]
+[ext_resource type="PackedScene" uid="uid://dt8urypgg8p56" path="res://scenes/slime.tscn" id="7_g3046"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_301py"]
 
@@ -95,7 +96,6 @@ layer_2/tile_data = PackedInt32Array(393281, 0, 15, 393280, 0, 15, 393279, 0, 15
 
 [node name="KillZone" parent="." instance=ExtResource("3_6d3ii")]
 position = Vector2(0, 136)
-collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_301py")
@@ -179,3 +179,6 @@ position = Vector2(1048, 0)
 
 [node name="LimitBottom" type="Marker2D" parent="CameraLimit"]
 position = Vector2(0, 112)
+
+[node name="Slime" parent="." instance=ExtResource("7_g3046")]
+position = Vector2(544, 64)
