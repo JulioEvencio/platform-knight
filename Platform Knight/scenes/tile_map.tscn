@@ -436,3 +436,6 @@ format = 2
 layer_0/name = "Tiles"
 layer_1/name = "Decoration"
 layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Background"
+layer_2/z_index = -10
+layer_2/tile_data = PackedInt32Array()
