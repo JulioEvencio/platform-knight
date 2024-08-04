@@ -1,10 +1,13 @@
 using Godot;
 using System;
 
-public partial class Coin : Area2D
+namespace PlataformKnight
 {
-	private void _on_body_entered(Player player)
+	public partial class Coin : Area2D
 	{
-		QueueFree();
+		private void OnBodyEntered(Player player)
+		{
+			QueueFree();
+		}
 	}
 }
