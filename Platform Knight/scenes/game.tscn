@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn631mw1fti2p"]
+[gd_scene load_steps=12 format=3 uid="uid://cn631mw1fti2p"]
 
 [ext_resource type="PackedScene" uid="uid://gbgcisxoqs0s" path="res://scenes/player.tscn" id="1_m6fpn"]
 [ext_resource type="PackedScene" uid="uid://5snwwd7k2rlm" path="res://scenes/tile_map.tscn" id="2_0c20y"]
 [ext_resource type="PackedScene" uid="uid://4e7hdm4am7un" path="res://scenes/platform.tscn" id="3_ovfdq"]
+[ext_resource type="PackedScene" uid="uid://b4vm1diln4k33" path="res://scenes/coin.tscn" id="4_vluui"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_301py"]
 
@@ -120,3 +121,45 @@ libraries = {
 "": SubResource("AnimationLibrary_xhuuc")
 }
 autoplay = "move"
+
+[node name="Coin" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(-160, 41)
+
+[node name="Coin2" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(-160, -96)
+
+[node name="Coin3" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(-336, -56)
+
+[node name="Coin4" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(-48, 40)
+
+[node name="Coin5" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(480, 56)
+
+[node name="Coin6" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(608, 56)
+
+[node name="Coin7" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(816, 56)
+
+[node name="Coin8" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(1040, 56)
+
+[node name="Coin9" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(368, 56)
+
+[node name="Coin10" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(128, 56)
+
+[node name="Coin11" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(304, 56)
+
+[node name="Coin12" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(48, 56)
+
+[node name="Coin13" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(-272, -56)
+
+[node name="Coin14" parent="." instance=ExtResource("4_vluui")]
+position = Vector2(712, 56)
