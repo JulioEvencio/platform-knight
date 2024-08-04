@@ -14,11 +14,14 @@ namespace PlataformKnight
 		
 		private void OnBodyEntered(Player player)
 		{
+			Engine.TimeScale = 0.5f;
+			player.GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
 			timer.Start();
 		}
 
 		private void OnTimerTimeout()
 		{
+			Engine.TimeScale = 1.0f;
 			GetTree().ReloadCurrentScene();
 		}
 	}
