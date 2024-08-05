@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4vm1diln4k33"]
+[gd_scene load_steps=18 format=3 uid="uid://b4vm1diln4k33"]
 
 [ext_resource type="Script" path="res://scripts/Coin.cs" id="1_6wvvp"]
 [ext_resource type="Texture2D" uid="uid://caxx6p0l8wsqa" path="res://assets/sprites/coin.png" id="1_lg1pu"]
+[ext_resource type="AudioStream" uid="uid://bde622xs1t2xj" path="res://assets/sounds/coin.wav" id="3_v378f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hadg"]
 atlas = ExtResource("1_lg1pu")
@@ -102,11 +103,15 @@ radius = 5.09902
 collision_layer = 0
 script = ExtResource("1_6wvvp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uwmyl")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ifm8i")
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v378f")
+
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="finished" from="Audio" to="." method="OnAudioFinished"]

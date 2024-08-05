@@ -9,13 +9,13 @@ namespace PlataformKnight
 
 		private Label scoreLabel;
 
-        public override void _Ready()
-        {
-            scoreLabel = GetNode<Label>("Score");
+		public override void _Ready()
+		{
+			scoreLabel = GetNode<Label>("Score");
 			UpdateScoreLabel();
-        }
+		}
 
-        public void AddScore(int score)
+		public void AddScore(int score)
 		{
 			this.score += score;
 			UpdateScoreLabel();
