@@ -12,12 +12,12 @@ namespace PlataformKnight
 
 		private AnimatedSprite2D sprite;
 
-        public override void _Ready()
-        {
-            sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        }
+		public override void _Ready()
+		{
+			sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		}
 
-        public override void _PhysicsProcess(double delta)
+		public override void _PhysicsProcess(double delta)
 		{
 			Animate();
 			Move(delta);
