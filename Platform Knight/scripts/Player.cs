@@ -10,7 +10,20 @@ namespace PlataformKnight
 
 		private float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
-		public override void _PhysicsProcess(double delta)
+		private AnimatedSprite2D sprite;
+
+        public override void _Ready()
+        {
+            sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        }
+
+        public override void _PhysicsProcess(double delta)
+		{
+			Animate();
+			Move(delta);
+		}
+
+		private void Move(double delta)
 		{
 			Vector2 velocity = Velocity;
 
@@ -31,6 +44,7 @@ namespace PlataformKnight
 			if (direction != 0)
 			{
 				velocity.X = direction * SPEED;
+				sprite.FlipH = direction != 1.0f;
 			}
 			else
 			{
@@ -40,6 +54,22 @@ namespace PlataformKnight
 			Velocity = velocity;
 
 			MoveAndSlide();
+		}
+
+		private void Animate()
+		{
+			if (!IsOnFloor())
+			{
+				sprite.Play("jump");
+			}
+			else if (Velocity == Vector2.Zero)
+			{
+				sprite.Play("idle");
+			}
+			else
+			{
+				sprite.Play("run");
+			}
 		}
 	}
 }

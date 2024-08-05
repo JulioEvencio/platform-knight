@@ -11,7 +11,7 @@ namespace PlataformKnight
 		{
 			timer = GetNode<Timer>("Timer");
 		}
-		
+
 		private void OnBodyEntered(Player player)
 		{
 			Engine.TimeScale = 0.5f;
