@@ -20,15 +20,20 @@ namespace PlataformKnight
 
 		private void OnBodyEntered(Player player)
 		{
-			gameManager.AddScore(1);
-			sprite.Visible = false;
-			collision.Disabled = true;
-			audio.Play();
+			CallDeferred("CustomSelfFree");
 		}
 
 		private void OnAudioFinished()
 		{
 			QueueFree();
+		}
+		
+		private void CustomSelfFree()
+		{
+			collision.Disabled = true;
+			gameManager.AddScore(1);
+			sprite.Visible = false;
+			audio.Play();
 		}
 	}
 }
