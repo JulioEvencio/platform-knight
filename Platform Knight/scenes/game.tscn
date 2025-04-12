@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://cn631mw1fti2p"]
 
 [ext_resource type="PackedScene" uid="uid://gbgcisxoqs0s" path="res://scenes/player.tscn" id="1_m6fpn"]
-[ext_resource type="Script" path="res://scripts/Game.cs" id="1_s1isx"]
+[ext_resource type="Script" uid="uid://cog1i1ucsyeim" path="res://scripts/Game.cs" id="1_s1isx"]
 [ext_resource type="PackedScene" uid="uid://5snwwd7k2rlm" path="res://scenes/tile_map.tscn" id="2_0c20y"]
-[ext_resource type="Script" path="res://scripts/GameManager.cs" id="2_5aale"]
+[ext_resource type="Script" uid="uid://d0tubsjeim8va" path="res://scripts/GameManager.cs" id="2_5aale"]
 [ext_resource type="PackedScene" uid="uid://p8j0e00iufx1" path="res://scenes/kill_zone.tscn" id="3_6d3ii"]
 [ext_resource type="PackedScene" uid="uid://4e7hdm4am7un" path="res://scenes/platform.tscn" id="3_ovfdq"]
 [ext_resource type="FontFile" uid="uid://ckysw07dwo8fl" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_5nmkx"]
@@ -47,8 +47,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8t2s"]
 _data = {
-"RESET": SubResource("Animation_mj3bb"),
-"move": SubResource("Animation_an7tm")
+&"RESET": SubResource("Animation_mj3bb"),
+&"move": SubResource("Animation_an7tm")
 }
 
 [sub_resource type="Animation" id="Animation_j0cof"]
@@ -85,8 +85,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhuuc"]
 _data = {
-"RESET": SubResource("Animation_j0cof"),
-"move": SubResource("Animation_ry44n")
+&"RESET": SubResource("Animation_j0cof"),
+&"move": SubResource("Animation_ry44n")
 }
 
 [node name="Game" type="Node2D"]
@@ -168,7 +168,7 @@ position = Vector2(-160, 53)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
 libraries = {
-"": SubResource("AnimationLibrary_w8t2s")
+&"": SubResource("AnimationLibrary_w8t2s")
 }
 autoplay = "move"
 
@@ -177,7 +177,7 @@ position = Vector2(640, 69)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 libraries = {
-"": SubResource("AnimationLibrary_xhuuc")
+&"": SubResource("AnimationLibrary_xhuuc")
 }
 autoplay = "move"
 
