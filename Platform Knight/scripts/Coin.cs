@@ -1,21 +1,21 @@
 using Godot;
 using System;
 
-namespace PlataformKnight
+namespace PlataformKnight.Scripts
 {
 	public partial class Coin : Area2D
 	{
-		private GameManager gameManager;
-		private AnimatedSprite2D sprite;
-		private CollisionShape2D collision;
-		private AudioStreamPlayer2D audio;
+		private GameManager _gameManager;
+		private AnimatedSprite2D _sprite;
+		private CollisionShape2D _collision;
+		private AudioStreamPlayer2D _audio;
 
 		public override void _Ready()
 		{
-			gameManager = GetNode<GameManager>("%GameManager");
-			sprite = GetNode<AnimatedSprite2D>("Sprite");
-			collision = GetNode<CollisionShape2D>("Collision");
-			audio = GetNode<AudioStreamPlayer2D>("Audio");
+			_gameManager = GetNode<GameManager>("%GameManager");
+			_sprite = GetNode<AnimatedSprite2D>("Sprite");
+			_collision = GetNode<CollisionShape2D>("Collision");
+			_audio = GetNode<AudioStreamPlayer2D>("Audio");
 		}
 
 		private void OnBodyEntered(Player player)
@@ -27,13 +27,13 @@ namespace PlataformKnight
 		{
 			QueueFree();
 		}
-		
+
 		private void CustomSelfFree()
 		{
-			collision.Disabled = true;
-			gameManager.AddScore(1);
-			sprite.Visible = false;
-			audio.Play();
+			_collision.Disabled = true;
+			_gameManager.AddScore(1);
+			_sprite.Visible = false;
+			_audio.Play();
 		}
 	}
 }

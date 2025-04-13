@@ -1,22 +1,22 @@
 using Godot;
 using System;
 
-namespace PlataformKnight
+namespace PlataformKnight.Scripts
 {
 	public partial class KillZone : Area2D
 	{
-		private Timer timer;
+		private Timer _timer;
 
 		public override void _Ready()
 		{
-			timer = GetNode<Timer>("Timer");
+			_timer = GetNode<Timer>("Timer");
 		}
 
 		private void OnBodyEntered(Player player)
 		{
 			Engine.TimeScale = 0.5f;
 			player.GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
-			timer.Start();
+			_timer.Start();
 		}
 
 		private void OnTimerTimeout()

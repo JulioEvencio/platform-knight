@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace PlataformKnight
+namespace PlataformKnight.Scripts
 {
 	public partial class Game : Node2D
 	{

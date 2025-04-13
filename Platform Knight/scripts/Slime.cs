@@ -1,42 +1,42 @@
 using Godot;
 using System;
 
-namespace PlataformKnight
+namespace PlataformKnight.Scripts
 {
 	public partial class Slime : CharacterBody2D
 	{
-		private const float SPEED = 60.0f;
+		private const float Speed = 60.0f;
 
-		private int direction = 1;
+		private int _direction = 1;
 
-		private AnimatedSprite2D sprite;
-		private RayCast2D rayCastLeft;
-		private RayCast2D rayCastRight;
+		private AnimatedSprite2D _sprite;
+		private RayCast2D _rayCastLeft;
+		private RayCast2D _rayCastRight;
 
 		public override void _Ready()
 		{
-			sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-			rayCastLeft = GetNode<RayCast2D>("RayCastLeft");
-			rayCastRight = GetNode<RayCast2D>("RayCastRight");
+			_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			_rayCastLeft = GetNode<RayCast2D>("RayCastLeft");
+			_rayCastRight = GetNode<RayCast2D>("RayCastRight");
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
-			if (!rayCastLeft.IsColliding())
+			if (!_rayCastLeft.IsColliding())
 			{
-				sprite.FlipH = false;
-				direction = 1;
+				_sprite.FlipH = false;
+				_direction = 1;
 			}
 
-			if (!rayCastRight.IsColliding())
+			if (!_rayCastRight.IsColliding())
 			{
-				sprite.FlipH = true;
-				direction = -1;
+				_sprite.FlipH = true;
+				_direction = -1;
 			}
 			
 			Vector2 velocity = Velocity;
 
-			velocity.X = SPEED * direction;
+			velocity.X = Speed * _direction;
 
 			Velocity = velocity;
 

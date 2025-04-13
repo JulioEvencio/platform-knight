@@ -1,29 +1,31 @@
 using Godot;
 using System;
 
-namespace PlataformKnight
+namespace PlataformKnight.Scripts
 {
 	public partial class GameManager : Node
 	{
-		private int score = 0;
+		private int _score = 0;
 
-		private Label scoreLabel;
+		private Label _scoreLabel;
 
 		public override void _Ready()
 		{
-			scoreLabel = GetNode<Label>("Score");
+			_scoreLabel = GetNode<Label>("Score");
+
 			UpdateScoreLabel();
 		}
 
 		public void AddScore(int score)
 		{
-			this.score += score;
+			_score += score;
+			
 			UpdateScoreLabel();
 		}
 
 		private void UpdateScoreLabel()
 		{
-			scoreLabel.Text = "You collected " + score + " coins";
+			_scoreLabel.Text = "You collected " + _score + " coins";
 		}
 	}
 }
