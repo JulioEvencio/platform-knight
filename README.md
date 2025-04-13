@@ -8,7 +8,7 @@ A platform game
 
 ## How to run
 
-This project was made in [Godot](https://godotengine.org) (version 4.2.2), just import the `project.godot` file
+This project was made in [Godot](https://godotengine.org) (Mono/C# - version 4.4.1), just import the `project.godot` file
 
 ## Contribution
 
